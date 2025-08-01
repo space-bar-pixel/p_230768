@@ -1,6 +1,10 @@
+import os
 import random
 
 numbers = []
+
+def clear_console():
+    return os.system('cls' if os.name == 'nt' else 'clear')
 
 def _input(text):
     return input(text)
@@ -15,6 +19,8 @@ def mode_select():
             _mode = _input("Use auto input? y/n or yes/no: ").strip().lower()
             if _mode not in ["y", "n", "yes", "no"]:
                 raise ValueError("Please enter a valid response (y/n or yes/no)")
+                
+            clear_console()
             return _mode
         except ValueError as e:
             print(e)
@@ -25,6 +31,8 @@ def round_select():
             _round = int(_input("Enter the number of values: ").strip())
             if _round <= 0:
                 raise ValueError
+                
+            clear_console()
             return _round
         except ValueError:
             print("Please enter a positive whole number only.")
@@ -39,6 +47,7 @@ def promp_for_list(_round):
             try:
                 num_Input = int(_input("Enter a number: ").strip())
                 numbers.append(num_Input)
+                clear_console()
                 break
             except ValueError:
                 print("Please enter a valid number.")
@@ -61,6 +70,8 @@ def main():
         if play_again not in ["y", "yes"]:
             print("Thank you for using the program!")
             break
+        
+        clear_console()
 
 if __name__ == "__main__":
     main()
