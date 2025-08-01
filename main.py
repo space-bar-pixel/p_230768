@@ -12,9 +12,9 @@ def sortList(_list):
 def mode_select():
     while True:
         try:
-            _mode = _input("ใช้ระบบ auto input หรือไม่ y/n or yes/no : ").strip().lower()
+            _mode = _input("Use auto input? y/n or yes/no: ").strip().lower()
             if _mode not in ["y", "n", "yes", "no"]:
-                raise ValueError("กรุณากรอกคำตอบให้ถูกต้อง (y/n or yes/no)")
+                raise ValueError("Please enter a valid response (y/n or yes/no)")
             return _mode
         except ValueError as e:
             print(e)
@@ -22,12 +22,12 @@ def mode_select():
 def round_select():
     while True:
         try:
-            _round = int(_input("เลือกจำนวนตัวเลข : ").strip())
+            _round = int(_input("Enter the number of values: ").strip())
             if _round <= 0:
                 raise ValueError
             return _round
         except ValueError:
-            print("กรุณากรอกตัวเลขจำนวนเต็มบวกเท่านั้น")
+            print("Please enter a positive whole number only.")
 
 def auto_Input(_round):
     global numbers
@@ -37,11 +37,11 @@ def promp_for_list(_round):
     for _ in range(_round):
         while True:
             try:
-                num_Input = int(_input("กรอกตัวเลข : ").strip())
+                num_Input = int(_input("Enter a number: ").strip())
                 numbers.append(num_Input)
                 break
             except ValueError:
-                print("กรุณากรอกตัวเลขที่ถูกต้อง")
+                print("Please enter a valid number.")
 
 def main():
     while True:
@@ -54,14 +54,13 @@ def main():
         elif _mode_ in ["no", "n"]:
             promp_for_list(_round)
 
-        print("ลำดับที่เรียงแล้ว:", sortList(numbers))
+        print("Sorted list:", sortList(numbers))
         print()
         
-        play_again = _input("เล่นอีกรอบหรือไม่ y/n : ").strip().lower()
+        play_again = _input("Play again? y/n: ").strip().lower()
         if play_again not in ["y", "yes"]:
-            print("ขอบคุณที่ใช้โปรแกรม!")
+            print("Thank you for using the program!")
             break
-        
 
 if __name__ == "__main__":
     main()
