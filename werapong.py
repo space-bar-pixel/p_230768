@@ -13,33 +13,24 @@ def sortList(_list):
     _list.sort()
     return _list
 
+#เขียนฟังชั่นที่ retuen yes หรือ no เพื่อให้ผู้ใช้เลือกว่าจะกรอกเองหรือ ให้โปรแกรงสุ่มให้
 def mode_select():
     while True:
-        try:
-            _mode = _input("Use auto input? y/n or yes/no: ").strip().lower()
-            if _mode not in ["y", "n", "yes", "no"]:
-                raise ValueError("Please enter a valid response (y/n or yes/no)")
-                
-            clear_console()
-            return _mode
-        except ValueError as e:
-            print(e)
+        mode = _input("คุณต้องการให้โปรแกรมสุ่มตัวเลขให้หรือไม่? (y = สุ่ม, n = กรอกเอง): ").strip().lower()
+        if mode in ["y", "yes", "n", "no"]:
+            return mode
+        else:
+            print("กรุณาพิมพ์แค่ 'y' หรือ 'n' เท่านั้น")
 
+    
+
+#เขียนฟังชั่นที่ retuen จำนวนตัวเลขที่จะกรอก เช่น 5 เท่ากับต้องกรอก 5 ตัวเลข
 def round_select():
-    while True:
-        try:
-            _round = int(_input("Enter the number of values: ").strip())
-            if _round <= 0:
-                raise ValueError
-                
-            clear_console()
-            return _round
-        except ValueError:
-            print("Please enter a positive whole number only.")
+    
 
+#ขียนฟังชั่นที่จะสุ่มตัวเลขตามจะนวนที่ผู้เล่นเลือ(_round)
 def auto_Input(_round):
-    global numbers
-    numbers = [random.randint(1, 100) for _ in range(_round)]
+    
 
 def promp_for_list(_round):
     for _ in range(_round):
