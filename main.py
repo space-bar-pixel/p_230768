@@ -13,17 +13,28 @@ def sortList(_list):
     _list.sort()
     return _list
 
+#เขียนฟังชั่นที่ retuen yes หรือ no เพื่อให้ผู้ใช้เลือกว่าจะกรอกเองหรือ ให้โปรแกรงสุ่มให้
 def mode_select():
     
 
+#เขียนฟังชั่นที่ retuen จำนวนตัวเลขที่จะกรอก เช่น 5 เท่ากับต้องกรอก 5 ตัวเลข
 def round_select():
-   
+    
 
+#ขียนฟังชั่นที่จะสุ่มตัวเลขตามจะนวนที่ผู้เล่นเลือ(_round)
 def auto_Input(_round):
     
 
 def promp_for_list(_round):
-    
+    for _ in range(_round):
+        while True:
+            try:
+                num_Input = int(_input("Enter a number: ").strip())
+                numbers.append(num_Input)
+                clear_console()
+                break
+            except ValueError:
+                print("Please enter a valid number.")
 
 def main():
     while True:
