@@ -15,6 +15,17 @@ def sortList(_list):
 
 #เขียนฟังชั่นที่ retuen yes หรือ no เพื่อให้ผู้ใช้เลือกว่าจะกรอกเองหรือ ให้โปรแกรงสุ่มให้
 def mode_select():
+    while True:
+        mode = _input("คุณต้องการให้โปรแกรมสุ่มตัวเลขให้หรือไม่? (y = สุ่ม, n = กรอกเอง): ").strip().lower()
+        if mode in ["y", "yes", "n", "no"]:
+            return mode
+        else:
+            print("กรุณาพิมพ์แค่ 'y' หรือ 'n' เท่านั้น")
+
+    
+
+#เขียนฟังชั่นที่ retuen จำนวนตัวเลขที่จะกรอก เช่น 5 เท่ากับต้องกรอก 5 ตัวเลข
+def round_select():
     
 
 #เขียนฟังชั่นที่ retuen จำนวนตัวเลขที่จะกรอก เช่น 5 เท่ากับต้องกรอก 5 ตัวเลข
@@ -37,7 +48,6 @@ def auto_Input(_round):
         numbers.append(rand_num)
     clear_console()
     print(f"Auto-generated numbers: {numbers}")
-
     
 
 def promp_for_list(_round):
