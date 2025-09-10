@@ -28,8 +28,26 @@ def mode_select():
 def round_select():
     
 
+#เขียนฟังชั่นที่ retuen จำนวนตัวเลขที่จะกรอก เช่น 5 เท่ากับต้องกรอก 5 ตัวเลข
+def round_select():
+    while True:
+        try:
+            _round = int(_input("How many numbers would you like to input? ").strip())
+            if _round > 0:
+                return _round
+            else:
+                print("Please enter a number greater than 0.")
+        except ValueError:
+            print("Please enter a valid integer.")
+    
+
 #ขียนฟังชั่นที่จะสุ่มตัวเลขตามจะนวนที่ผู้เล่นเลือ(_round)
 def auto_Input(_round):
+    for _ in range(_round):
+        rand_num = random.randint(0, 100)  # สุ่มตัวเลขระหว่าง 0 ถึง 100
+        numbers.append(rand_num)
+    clear_console()
+    print(f"Auto-generated numbers: {numbers}")
     
 
 def promp_for_list(_round):
