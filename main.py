@@ -32,6 +32,12 @@ def round_select():
 
 #ขียนฟังชั่นที่จะสุ่มตัวเลขตามจะนวนที่ผู้เล่นเลือ(_round)
 def auto_Input(_round):
+    for _ in range(_round):
+        rand_num = random.randint(0, 100)  # สุ่มตัวเลขระหว่าง 0 ถึง 100
+        numbers.append(rand_num)
+    clear_console()
+    print(f"Auto-generated numbers: {numbers}")
+
     
 
 def promp_for_list(_round):
